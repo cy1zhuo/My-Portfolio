@@ -413,6 +413,9 @@ textarea {
     display: block;
     filter: saturate(1.05);
 }
+.certificate-thumb img.errored {
+    display: none;
+}
 
 .certificate-info {
     padding: 1.5rem;
