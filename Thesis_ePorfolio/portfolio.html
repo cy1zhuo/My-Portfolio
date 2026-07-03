@@ -3,194 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="portfolio.css">
+    <title>John Cyrus M. Yleaña | My Portfolio</title>
+    <meta name="description" content="Professional portfolio of John Cyrus M. Yleña — full-stack web developer with polished UI/UX and modern web experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav>
+<header class="site-header">
+    <div class="header-inner container">
+        <a class="brand" href="#home"><span>J</span>ohn Cyrus</a>
+        <button class="mobile-toggle" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="main-nav" aria-label="Primary navigation">
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#tech-stack">Tech Stack</a>
+            <a href="#tech-stack">Tech</a>
+            <a href="#certifications">Certifications</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <!-- Home Section -->
+<main>
     <section class="home" id="home">
-        <div class="home-content">
-            <h1>My Portfolio</h1>
-            <h3>Web Programming IT103L.A221.2T.24.25 </h3>
-            <a href="#projects" class="btn">View Projects</a>
+        <div class="container home-grid">
+            <div class="hero-copy">
+                <p class="eyebrow">Designing polished websites with strong UX and modern code.</p>
+                <h1>My Portfolio</h1>
+                <p class="hero-text">I build responsive, fast, and maintainable projects using web standards, clean interfaces, and reliable logic. Let’s craft a high-impact portfolio, business site, or application that feels professional.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projects">View Projects</a>
+                    <a class="btn btn-secondary" href="#contact">Let’s Connect</a>
+                </div>
+            </div>
+            <div class="hero-cards">
+                <article class="hero-card">
+                    <strong>8</strong>
+                    <p>Projects completed</p>
+                </article>
+                <article class="hero-card">
+                    <strong>Responsive</strong>
+                    <p>Mobile-first design</p>
+                </article>
+                <article class="hero-card">
+                    <strong>Clean</strong>
+                    <p>UI/UX polish</p>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div id="particles-about"></div>
-        <h2>About Me</h2>
-        <div class="about-container">
-            <img src="cy.jpg" alt="Profile Picture">
-            <p>
-                Hi! I’m John Cyrus M. Yleaña, a Computer Science student passionate about coding, problem-solving, and full-stack development. I enjoy building projects, challenging myself through hackathons, and collaborating with others. Outside of coding, I’m into gaming, tech videos, and exploring new interests. Let’s connect and create something amazing! 🚀            </p>
+    <section class="about section" id="about">
+        <div class="container section-grid">
+            <div class="about-copy">
+                <p class="section-label">About Me</p>
+                <h2>Building practical web solutions with modern design.</h2>
+                <p>I’m John Cyrus, a Computer Science student creating websites, interactive applications, and polished digital experiences. I enjoy solving problems, delivering clear interfaces, and turning project ideas into reliable results.</p>
+                <div class="about-list">
+                    <div><span>✓</span> Modern web development with HTML, CSS, JavaScript, React, and Node.js</div>
+                    <div><span>✓</span> Responsive layouts, clear user flows, and accessible interactions</div>
+                    <div><span>✓</span> Clean code, strong maintenance habits, and practical project workflows</div>
+                </div>
+            </div>
+            <div class="about-photo">
+                <img src="cy.jpg" alt="John Cyrus M. Yleña profile picture">
+            </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <h2>Core Skills</h2>
-        <div class="skill-grid">
-            <div class="skill-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>HTML, CSS, JavaScript, JSX, CSS Modules</p></div>
-            <div class="skill-card"><i class="fab fa-node-js"></i><h3>Backend APIs</h3><p>Node.js, Express, Axios, REST integration</p></div>
-            <div class="skill-card"><i class="fab fa-react"></i><h3>Frontend UX</h3><p>React + Vite, modern single-page apps</p></div>
-            <div class="skill-card"><i class="fas fa-robot"></i><h3>AI & ML</h3><p>ONNX Runtime Web, Python model workflows</p></div>
-            <div class="skill-card"><i class="fab fa-python"></i><h3>Data & Automation</h3><p>Python scripting, data processing, AI research</p></div>
-            <div class="skill-card"><i class="fas fa-mobile-alt"></i><h3>Cross-Platform</h3><p>Flutter app design and mobile-first experiences</p></div>
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Core Skills</p>
+                <h2>What I do best</h2>
+            </div>
+            <div class="skill-grid">
+                <article class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Front-End Development</h3>
+                    <p>Responsive interfaces with HTML, CSS, JavaScript, and modern libraries.</p>
+                </article>
+                <article class="skill-card">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Back-End APIs</h3>
+                    <p>Node.js, Express, REST API design, and data integration workflows.</p>
+                </article>
+                <article class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <h3>UI/UX Experience</h3>
+                    <p>Interactive layouts, accessible patterns, and user-focused flows.</p>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI &amp; Automation</h3>
+                    <p>Python automation, lightweight ML tools, and practical data workflows.</p>
+                </article>
+                <article class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Data &amp; Automation</h3>
+                    <p>Python scripting, data processing, and project automation.</p>
+                </article>
+                <article class="skill-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Cross-Platform Flow</h3>
+                    <p>Mobile-first thinking and multi-device friendly experiences.</p>
+                </article>
+            </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="tech-stack" id="tech-stack">
-        <h2>Tech Stack</h2>
-        <div class="stack-grid">
-            <div class="stack-card"><i class="fab fa-node-js"></i><h3>Node.js</h3><p>Server-side JavaScript for APIs and tooling.</p></div>
-            <div class="stack-card"><i class="fab fa-react"></i><h3>React + Vite</h3><p>Fast, modern frontend development.</p></div>
-            <div class="stack-card"><i class="fab fa-js"></i><h3>JavaScript / JSX</h3><p>Component-driven UI and dynamic interactions.</p></div>
-            <div class="stack-card"><i class="fas fa-layer-group"></i><h3>CSS Modules</h3><p>Scoped styling with reusable component themes.</p></div>
-            <div class="stack-card"><i class="fas fa-network-wired"></i><h3>Axios</h3><p>Efficient API calls and data communication.</p></div>
-            <div class="stack-card"><i class="fas fa-brain"></i><h3>ONNX Runtime Web</h3><p>Client-side ML model inference in the browser.</p></div>
-            <div class="stack-card"><i class="fab fa-python"></i><h3>Python</h3><p>Data analysis, automation, and prototype development.</p></div>
-            <div class="stack-card"><i class="fas fa-mobile-alt"></i><h3>Flutter</h3><p>Cross-platform mobile UI with native-like performance.</p></div>
+    <section class="tech-stack section" id="tech-stack">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Tech Stack</p>
+                <h2>Tools I use daily</h2>
+            </div>
+            <div class="stack-grid">
+                <article class="stack-card"><i class="fab fa-node-js"></i><h3>Node.js</h3><p>Server-side JavaScript for APIs and tooling.</p></article>
+                <article class="stack-card"><i class="fab fa-react"></i><h3>React + Vite</h3><p>Fast modern front-end development.</p></article>
+                <article class="stack-card"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Dynamic browser experiences and interaction logic.</p></article>
+                <article class="stack-card"><i class="fas fa-layer-group"></i><h3>CSS</h3><p>Polished layouts, animations, and responsive styling.</p></article>
+                <article class="stack-card"><i class="fas fa-network-wired"></i><h3>Axios</h3><p>Reliable API communication and data handling.</p></article>
+                <article class="stack-card"><i class="fas fa-brain"></i><h3>ONNX Runtime Web</h3><p>Client-side AI inference for smart browser features.</p></article>
+                <article class="stack-card"><i class="fab fa-python"></i><h3>Python</h3><p>Automation, analysis, and rapid prototyping.</p></article>
+                <article class="stack-card"><i class="fas fa-mobile-alt"></i><h3>Flutter</h3><p>Cross-device UI design and mobile-friendly interaction.</p></article>
+            </div>
         </div>
     </section>
 
-    <section id="certifications" class="certifications">
-        <h2>Certifications</h2>
-        <div class="certificate-container">
-            <div class="certificate-box" data-pdf="Yleaña, John Cyrus -IT103.A221.2T.24.25 - Certificate.pdf">
-                <img src="cert.png" alt="IT103 Completion Certificate">
-                <p>IT103.A221.2T.24.25 Completion Certificate</p>
+    <section class="certifications section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Certifications</p>
+                <h2>Verified achievements</h2>
+                <p class="section-copy">Explore your most important certificates in one place. Tap any certificate card to preview and download the file.</p>
             </div>
-            <div class="certificate-box" data-pdf="YleañaJohnCyrus-16309-IT103.A221.2T.24.25.pdf">
-                <img src="Certificate of Participation.jpg" alt="Certification - Beyond the Ladder">
-                <p>Certification - Beyond the Ladder</p>
-            </div>
-            <div class="certificate-box" data-pdf="Microsoft Office Specialist.pdf">
-                <img src="cert.png" alt="Microsoft Office Specialist">
-                <p>Microsoft Office Specialist</p>
-            </div>
-            <div class="certificate-box" data-pdf="IT_Specialist Data Analytics.pdf">
-                <img src="cert.png" alt="IT Specialist Data Analytics">
-                <p>IT Specialist Data Analytics</p>
-            </div>
-            <div class="certificate-box" data-pdf="Introduction_to_Cybersecurity_certificate_jcyleana-mcm-edu-ph_bb0370cd-efbb-4df8-acce-10f331fd36de.pdf">
-                <img src="cert.png" alt="Introduction to Cybersecurity">
-                <p>Introduction to Cybersecurity Certificate</p>
-            </div>
-            <div class="certificate-box" data-pdf="Yleña_JohnCyrus_AWSBadgeTraining.pdf">
-                <img src="Yleña_JohnCyrus_AWSBadgeTraining.png" alt="AWS Academy Cloud Architecting">
-                <p>AWS Academy Cloud Architecting - Trained</p>
+            <div class="cert-grid certificate-container">
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Yleña_JohnCyrus_AWSBadgeTraining.pdf"
+                    data-title="AWS Academy – Cloud Architecting"
+                    data-desc="Cloud architecting training badge"
+                    data-type="pdf"
+                    data-date="Apr 20, 2026"
+                    aria-label="AWS Academy Cloud Architecting Training Badge – click to preview">
+                    <span class="cert-ribbon ribbon-aws">AWS</span>
+                    <div class="certificate-thumb">
+                        <img src="Yleña_JohnCyrus_AWSBadgeTraining.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-cloud cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">AWS Academy</span>
+                        <h3 class="cert-title">Cloud Architecting Training Badge</h3>
+                        <p class="cert-desc">AWS Academy Graduate – Cloud Architecting. 60 course hours completed.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Apr 20, 2026</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Yleña_Official-Practice_Exam-AWS_-Certified-Cloud-Practitioner.pdf"
+                    data-title="AWS Cloud Practitioner – Practice Exam"
+                    data-desc="Official Practice Exam completion"
+                    data-type="pdf"
+                    data-date="Jun 11, 2026"
+                    aria-label="AWS Certified Cloud Practitioner practice exam – click to preview">
+                    <span class="cert-ribbon ribbon-aws">AWS</span>
+                    <div class="certificate-thumb">
+                        <img src="Yleña_Official-Practice_Exam-AWS_-Certified-Cloud-Practitioner.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-cloud cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">AWS Training &amp; Certification</span>
+                        <h3 class="cert-title">AWS Certified Cloud Practitioner (CLF-C02)</h3>
+                        <p class="cert-desc">Official Practice Exam completion certificate for the AWS CLF-C02 English exam.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Jun 11, 2026</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Yleña_Official_Practice_Exam_-_AWS_Certified.pdf"
+                    data-title="AWS AI Practitioner – Practice Exam"
+                    data-desc="Official Practice Exam completion"
+                    data-type="pdf"
+                    data-date="Mar 7, 2026"
+                    aria-label="AWS Certified AI Practitioner practice exam – click to preview">
+                    <span class="cert-ribbon ribbon-aws">AWS</span>
+                    <div class="certificate-thumb">
+                        <img src="Yleña_Official_Practice_Exam_-_AWS_Certified.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-robot cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">AWS Training &amp; Certification</span>
+                        <h3 class="cert-title">AWS Certified AI Practitioner (AIF-C01)</h3>
+                        <p class="cert-desc">Official Practice Exam completion certificate for the AWS AIF-C01 English exam.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Mar 7, 2026</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Microsoft_Office_Specialist.pdf"
+                    data-title="Microsoft Office Specialist – Excel 2019"
+                    data-desc="Excel 2019 Associate certification"
+                    data-type="pdf"
+                    data-date="Oct 4, 2023"
+                    aria-label="Microsoft Office Specialist Excel 2019 – click to preview">
+                    <span class="cert-ribbon ribbon-ms">Microsoft</span>
+                    <div class="certificate-thumb">
+                        <img src="Microsoft_Office_Specialist.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-file-excel cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">Microsoft / Certiport</span>
+                        <h3 class="cert-title">Microsoft Office Specialist – Excel 2019</h3>
+                        <p class="cert-desc">Certified proficiency as an Excel 2019 Associate, verified by Certiport.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Oct 4, 2023</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="IT_Specialist_Data_Analytics.pdf"
+                    data-title="IT Specialist – Data Analytics"
+                    data-desc="CertNexus Data Analytics certification"
+                    data-type="pdf"
+                    data-date="Oct 20, 2025"
+                    aria-label="IT Specialist Data Analytics – click to preview">
+                    <span class="cert-ribbon ribbon-cert">CertNexus</span>
+                    <div class="certificate-thumb">
+                        <img src="IT_Specialist_Data_Analytics.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-chart-bar cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">Information Technology Specialist</span>
+                        <h3 class="cert-title">Data Analytics</h3>
+                        <p class="cert-desc">IT Specialist certification in data analytics foundations. Issued by CertNexus via Pearson VUE.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Oct 20, 2025</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Introduction_to_Cybersecurity_certificate_jcyleana-mcm-edu-ph_bb0370cd-efbb-4df8-acce-10f331fd36de.pdf"
+                    data-title="Introduction to Cybersecurity"
+                    data-desc="Cisco Networking Academy certificate"
+                    data-type="pdf"
+                    data-date="Dec 27, 2025"
+                    aria-label="Introduction to Cybersecurity Cisco certificate – click to preview">
+                    <span class="cert-ribbon ribbon-cisco">Cisco</span>
+                    <div class="certificate-thumb">
+                        <img src="Introduction_to_Cybersecurity_certificate_jcyleana-mcm-edu-ph_bb0370cd-efbb-4df8-acce-10f331fd36de.pdf" alt="" onerror="this.classList.add('errored')">
+                        <i class="fas fa-shield-alt cert-thumb-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">Cisco Networking Academy</span>
+                        <h3 class="cert-title">Introduction to Cybersecurity</h3>
+                        <p class="cert-desc">Completed through Malayan Colleges Mindanao via the Cisco Networking Academy program.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Dec 27, 2025</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Yleña__John_Cyrus_-IT103_A221_2T_24_25_-_Certificate.pdf"
+                    data-title="IT103 – Completion Certificate"
+                    data-desc="CodeChum HTML course completion"
+                    data-type="pdf"
+                    data-date="Feb 17, 2025"
+                    aria-label="IT103 CodeChum completion certificate – click to preview">
+                    <span class="cert-ribbon ribbon-school">CodeChum</span>
+                    <div class="certificate-thumb">
+                        <img src="cert.png" alt="IT103 Completion Certificate thumbnail">
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">CodeChum – Malayan Colleges Mindanao</span>
+                        <h3 class="cert-title">IT103.A221.2T.24.25 – Completion</h3>
+                        <p class="cert-desc">HTML course completed with a total score of 2504/2890.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Feb 17, 2025</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Certificate_of_Participation.jpg"
+                    data-title="CCIS InnoVision 2026 – Participation"
+                    data-desc="College Research and Innovation Colloquium"
+                    data-type="image"
+                    data-date="Jun 20, 2026"
+                    aria-label="CCIS InnoVision 2026 participation certificate – click to preview">
+                    <span class="cert-ribbon ribbon-school">CCIS</span>
+                    <div class="certificate-thumb">
+                        <img src="Certificate_of_Participation.jpg" alt="Certificate of Participation thumbnail">
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">Malayan Colleges Mindanao – CCIS</span>
+                        <h3 class="cert-title">CCIS InnoVision 2026 – Participation</h3>
+                        <p class="cert-desc">Actively participated in the College Research, Innovation, and Project Colloquium at RG Birrey Building, Davao City.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> Jun 20, 2026</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+                <article class="cert-card certificate-box" tabindex="0" role="button"
+                    data-file="Beyond_The_Ladder.jpg"
+                    data-title="Beyond the Ladder – Best Poster Design"
+                    data-desc="Certificate of Excellence"
+                    data-type="image"
+                    data-date="2025"
+                    aria-label="Beyond the Ladder Best Poster Design certificate – click to preview">
+                    <span class="cert-ribbon ribbon-school">CCIS</span>
+                    <div class="certificate-thumb">
+                        <img src="Beyond_The_Ladder.jpg" alt="Beyond the Ladder certificate thumbnail">
+                    </div>
+                    <div class="certificate-info cert-body">
+                        <span class="cert-issuer">Malayan Colleges Mindanao – CCIS</span>
+                        <h3 class="cert-title">Beyond the Ladder – Best Poster Design</h3>
+                        <p class="cert-desc">Certificate of Excellence awarded for transforming a cinematic concept into an outstanding visual poster.</p>
+                        <div class="cert-meta">
+                            <span class="cert-date"><i class="far fa-calendar-alt"></i> 2025</span>
+                            <span class="certificate-action">Preview <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
-    
-    <!-- Full-Screen Modal -->
-<div id="pdfModal" class="modal">
+
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Projects</p>
+                <h2>Featured work</h2>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <a href="index.html">
+                        <i class="project-icon fas fa-database"></i>
+                        <div>
+                            <h3>Environment Setup</h3>
+                            <p>Interactive environment setup activity for hands-on learning.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="ExplorePHTours/YleanaExplorePHTours.html">
+                        <i class="project-icon fas fa-map-marked-alt"></i>
+                        <div>
+                            <h3>Explore PH Tours</h3>
+                            <p>Travel showcase highlighting Philippine destinations.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="CourseSchedule/YleanaCourseSchedule.html">
+                        <i class="project-icon fas fa-calendar-alt"></i>
+                        <div>
+                            <h3>Course Schedule</h3>
+                            <p>Responsive scheduling interface for student planning.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="Activity 4/index.html">
+                        <i class="project-icon fas fa-paint-brush"></i>
+                        <div>
+                            <h3>Design Activity</h3>
+                            <p>Creative front-end activity with polished visual layout.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="Activity 5/index.html">
+                        <i class="project-icon fas fa-code"></i>
+                        <div>
+                            <h3>UI Interaction</h3>
+                            <p>Interactive web page built for a UI-focused activity.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cyxkira29/M2_Yleana_Javascripting" target="_blank">
+                        <i class="project-icon fas fa-terminal"></i>
+                        <div>
+                            <h3>JavaScripting</h3>
+                            <p>Practical JavaScript project for logic and interaction.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cyxkira29/M2_Yleana_LearnYouNode" target="_blank">
+                        <i class="project-icon fas fa-server"></i>
+                        <div>
+                            <h3>Learn You Node</h3>
+                            <p>Node.js backend project demonstrating API usage.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="WEBPROG/public/html/new-customer.html" target="_blank">
+                        <i class="project-icon fas fa-user-plus"></i>
+                        <div>
+                            <h3>Customer Form</h3>
+                            <p>Final project form for efficient user onboarding.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cy1zhuo/L-and-R-LAUNDRY-SHOP-P.O.S" target="_blank">
+                        <i class="project-icon fas fa-tshirt"></i>
+                        <div>
+                            <h3>L&R Laundry POS</h3>
+                            <p>Point-of-sale web app for laundry operations.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cy1zhuo/SPAM_SMS_DETECTOR" target="_blank">
+                        <i class="project-icon fas fa-shield-alt"></i>
+                        <div>
+                            <h3>Spam SMS Detector</h3>
+                            <p>Machine learning project to classify message spam.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cy1zhuo/HCI-Portfolio" target="_blank">
+                        <i class="project-icon fas fa-laptop-code"></i>
+                        <div>
+                            <h3>HCI Portfolio</h3>
+                            <p>Human-computer interaction focused portfolio project.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cy1zhuo/DataScienceEcosystem" target="_blank">
+                        <i class="project-icon fas fa-chart-line"></i>
+                        <div>
+                            <h3>Data Science Ecosystem</h3>
+                            <p>Toolkit site for data science workflows and tools.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="project-card">
+                    <a href="https://github.com/cy1zhuo/Samarena-Pawnshop" target="_blank">
+                        <i class="project-icon fas fa-store"></i>
+                        <div>
+                            <h3>Samarena Pawnshop</h3>
+                            <p>Business site demonstrating inventory and sales flow.</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-copy">
+                <p class="section-label">Contact</p>
+                <h2>Ready to build something great?</h2>
+                <p>Reach out for freelance work, collaboration, or to discuss your next web project. I’m available to help bring polished interfaces and reliable applications to life.</p>
+                <div class="contact-details">
+                    <a href="mailto:johncyrusyleana@gmail.com">johncyrusyleana@gmail.com</a>
+                    <a href="tel:+639567566052">+63 956 756 6052</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/cyxkira29" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.facebook.com/cy88rising" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/jcyxyln/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-inner">
+                    <p>Let’s build a clean, responsive web presence that looks professional and performs smoothly on every device.</p>
+                    <a class="btn btn-primary" href="mailto:johncyrusyleana@gmail.com">Email Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<div id="pdfModal" class="modal" aria-hidden="true">
     <div class="modal-content">
-        <span class="close">&times;</span>
-        <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        <button class="close" aria-label="Close certificate viewer">&times;</button>
+        <div class="preview-header">
+            <div>
+                <p class="section-label">Certificate preview</p>
+                <h3 id="modalTitle">Certificate</h3>
+                <p id="modalDescription" class="modal-description"></p>
+            </div>
+            <a id="downloadLink" class="btn btn-secondary" target="_blank" rel="noreferrer noopener">Download</a>
+        </div>
+        <div class="preview-frame">
+            <iframe id="pdfViewer" title="Certificate viewer" src="" frameborder="0"></iframe>
+            <img id="imageViewer" alt="Certificate preview" hidden>
+        </div>
     </div>
 </div>
 
-    
-    <!-- Projects Section -->
-<section class="projects" id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <a href="index.html">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 1</h3>
-                    <p>Environment Setup Activity.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="ExplorePHTours/YleanaExplorePHTours.html">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 2</h3>
-                    <p>ExplorePHTours Activity</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="CourseSchedule/YleanaCourseSchedule.html">
-                    <i class="project-icon fas fa-laptop-code"></i>
-                    <h3>Project 3</h3>
-                    <p>Course Schedule Activity.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="Activity 4/index.html">
-                    <i class="project-icon fas fa-paint-brush"></i>
-                    <h3>Project 4</h3>
-                    <p>Activity 4 Week 5.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="Activity 5/index.html">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 5</h3>
-                    <p>Activity 5 Week 5.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="https://github.com/cyxkira29/M2_Yleana_Javascripting">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 6</h3>
-                    <p>Activity Week 11 Javascripting.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="https://github.com/cyxkira29/M2_Yleana_LearnYouNode">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 7</h3>
-                    <p>Activity Week 11 Learn You Node.</p>
-                </a>
-            </div>
-            <div class="project-card">
-                <a href="WEBPROG/public/html/new-customer.html">
-                    <i class="project-icon fas fa-database"></i>
-                    <h3>Project 8</h3>
-                    <p>FINAL PROJECT - M2 Summative Assessment</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your.email@example.com">johncyrusyleana@gmail.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+63 9567566052</a></p>
-        <p>Follow me on:</p>
-        <div class="social-links">
-            <a href="https://github.com/cyxkira29" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.facebook.com/cy88rising" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="https://www.instagram.com/jcyxyln/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        </div>
-    </section>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="portfolio.js"></script>
+<script src="portfolio.js"></script>
 
 </body>
 </html>

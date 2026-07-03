@@ -1,83 +1,131 @@
-// Scroll to top button
 const scrollToTopButton = document.getElementById('scrollToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopButton.style.display = 'block';
-    } else {
-        scrollToTopButton.style.display = 'none';
-    }
-});
-scrollToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Certificate modal behavior
 const pdfModal = document.getElementById('pdfModal');
 const pdfViewer = document.getElementById('pdfViewer');
-const closeModal = document.querySelector('.close');
-const certificateBoxes = document.querySelectorAll('.certificate-box');
+const closeModal = pdfModal?.querySelector('.close');
+const certificateBoxes = document.querySelectorAll('.certificate-box, .cert-card');
+const navLinks = document.querySelectorAll('.main-nav a');
+const mobileToggle = document.querySelector('.mobile-toggle');
+const mainNav = document.querySelector('.main-nav');
 
-certificateBoxes.forEach(box => {
-    box.addEventListener('click', () => {
-        const pdfPath = box.dataset.pdf;
-        if (pdfPath) {
-            pdfViewer.src = pdfPath;
-            pdfModal.classList.add('show');
-        }
-    });
-});
+function toggleMobileNav() {
+    if (!mainNav) return;
+    mainNav.classList.toggle('open');
+}
 
-closeModal.addEventListener('click', () => {
-    pdfModal.classList.remove('show');
-    pdfViewer.src = '';
-});
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', toggleMobileNav);
+}
 
-window.addEventListener('click', (event) => {
-    if (event.target === pdfModal) {
-        pdfModal.classList.remove('show');
-        pdfViewer.src = '';
-    }
-});
-
-// Smooth scrolling for nav links
-const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
+    link.addEventListener('click', event => {
         event.preventDefault();
         const targetId = link.getAttribute('href').slice(1);
         const target = document.getElementById(targetId);
         if (target) {
-            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+        if (mainNav) {
+            mainNav.classList.remove('open');
         }
     });
 });
 
-// Toggle Q&A answers
-const questionItems = document.querySelectorAll('#questions li');
-questionItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.querySelector('.answer');
-        questionItems.forEach(i => {
-            if (i !== item) {
-                i.querySelector('.answer').classList.remove('show');
+if (scrollToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopButton.style.display = 'flex';
+        } else {
+            scrollToTopButton.style.display = 'none';
+        }
+    });
+
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+if (certificateBoxes.length > 0 && pdfModal && pdfViewer) {
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const downloadLink = document.getElementById('downloadLink');
+    const imageViewer = document.getElementById('imageViewer');
+
+    const closeCertificateModal = () => {
+        pdfModal.classList.remove('show');
+        pdfModal.setAttribute('aria-hidden', 'true');
+        pdfViewer.src = '';
+        imageViewer.src = '';
+        imageViewer.hidden = true;
+        pdfViewer.hidden = false;
+    };
+
+    certificateBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const filePath = box.dataset.file;
+            const title = box.dataset.title || 'Certificate';
+            const desc = box.dataset.desc || 'Preview the certificate.';
+            const isImage = filePath?.match(/\.(png|jpg|jpeg|webp)$/i);
+
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalDescription) modalDescription.textContent = desc;
+            if (downloadLink) {
+                downloadLink.href = encodeURI(filePath || '');
+                downloadLink.textContent = 'Download file';
+            }
+
+            if (filePath) {
+                if (isImage) {
+                    imageViewer.src = encodeURI(filePath);
+                    imageViewer.hidden = false;
+                    pdfViewer.hidden = true;
+                } else {
+                    pdfViewer.src = encodeURI(filePath);
+                    pdfViewer.hidden = false;
+                    imageViewer.hidden = true;
+                }
+                pdfModal.classList.add('show');
+                pdfModal.setAttribute('aria-hidden', 'false');
             }
         });
-        answer.classList.toggle('show');
-    });
-});
 
-// Header background and show sections on scroll
-const sectionsToShow = document.querySelectorAll('.about, .skills, .tech-stack, .projects, #questions, .contact');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        document.querySelector('header').classList.add('scrolled');
-    } else {
-        document.querySelector('header').classList.remove('scrolled');
+        box.addEventListener('keydown', event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                box.click();
+            }
+        });
+    });
+
+    if (closeModal) {
+        closeModal.addEventListener('click', closeCertificateModal);
     }
-    sectionsToShow.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            section.classList.add('show');
+
+    window.addEventListener('click', event => {
+        if (event.target === pdfModal) {
+            closeCertificateModal();
         }
     });
-});
+} else if (certificateBoxes.length > 0) {
+    console.warn('Certificate modal elements are missing or incomplete.');
+}
+
+const revealSections = document.querySelectorAll('.section');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+revealSections.forEach(section => revealObserver.observe(section));
+
+const style = document.createElement('style');
+style.textContent = `
+.section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.section.revealed { opacity: 1; transform: translateY(0); }
+`;
+document.head.appendChild(style);
