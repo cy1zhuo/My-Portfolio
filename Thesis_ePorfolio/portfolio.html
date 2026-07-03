@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#tech-stack">Tech Stack</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>My Portfolio</h1>
+            <h3>Web Programming IT103L.A221.2T.24.25 </h3>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div id="particles-about"></div>
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="cy.jpg" alt="Profile Picture">
+            <p>
+                Hi! I’m John Cyrus M. Yleaña, a Computer Science student passionate about coding, problem-solving, and full-stack development. I enjoy building projects, challenging myself through hackathons, and collaborating with others. Outside of coding, I’m into gaming, tech videos, and exploring new interests. Let’s connect and create something amazing! 🚀            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>Core Skills</h2>
+        <div class="skill-grid">
+            <div class="skill-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>HTML, CSS, JavaScript, JSX, CSS Modules</p></div>
+            <div class="skill-card"><i class="fab fa-node-js"></i><h3>Backend APIs</h3><p>Node.js, Express, Axios, REST integration</p></div>
+            <div class="skill-card"><i class="fab fa-react"></i><h3>Frontend UX</h3><p>React + Vite, modern single-page apps</p></div>
+            <div class="skill-card"><i class="fas fa-robot"></i><h3>AI & ML</h3><p>ONNX Runtime Web, Python model workflows</p></div>
+            <div class="skill-card"><i class="fab fa-python"></i><h3>Data & Automation</h3><p>Python scripting, data processing, AI research</p></div>
+            <div class="skill-card"><i class="fas fa-mobile-alt"></i><h3>Cross-Platform</h3><p>Flutter app design and mobile-first experiences</p></div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech-stack">
+        <h2>Tech Stack</h2>
+        <div class="stack-grid">
+            <div class="stack-card"><i class="fab fa-node-js"></i><h3>Node.js</h3><p>Server-side JavaScript for APIs and tooling.</p></div>
+            <div class="stack-card"><i class="fab fa-react"></i><h3>React + Vite</h3><p>Fast, modern frontend development.</p></div>
+            <div class="stack-card"><i class="fab fa-js"></i><h3>JavaScript / JSX</h3><p>Component-driven UI and dynamic interactions.</p></div>
+            <div class="stack-card"><i class="fas fa-layer-group"></i><h3>CSS Modules</h3><p>Scoped styling with reusable component themes.</p></div>
+            <div class="stack-card"><i class="fas fa-network-wired"></i><h3>Axios</h3><p>Efficient API calls and data communication.</p></div>
+            <div class="stack-card"><i class="fas fa-brain"></i><h3>ONNX Runtime Web</h3><p>Client-side ML model inference in the browser.</p></div>
+            <div class="stack-card"><i class="fab fa-python"></i><h3>Python</h3><p>Data analysis, automation, and prototype development.</p></div>
+            <div class="stack-card"><i class="fas fa-mobile-alt"></i><h3>Flutter</h3><p>Cross-platform mobile UI with native-like performance.</p></div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+        <h2>Certifications</h2>
+        <div class="certificate-container">
+            <div class="certificate-box" data-pdf="Yleaña, John Cyrus -IT103.A221.2T.24.25 - Certificate.pdf">
+                <img src="cert.png" alt="IT103 Completion Certificate">
+                <p>IT103.A221.2T.24.25 Completion Certificate</p>
+            </div>
+            <div class="certificate-box" data-pdf="YleañaJohnCyrus-16309-IT103.A221.2T.24.25.pdf">
+                <img src="Certificate of Participation.jpg" alt="Certification - Beyond the Ladder">
+                <p>Certification - Beyond the Ladder</p>
+            </div>
+            <div class="certificate-box" data-pdf="Microsoft Office Specialist.pdf">
+                <img src="cert.png" alt="Microsoft Office Specialist">
+                <p>Microsoft Office Specialist</p>
+            </div>
+            <div class="certificate-box" data-pdf="IT_Specialist Data Analytics.pdf">
+                <img src="cert.png" alt="IT Specialist Data Analytics">
+                <p>IT Specialist Data Analytics</p>
+            </div>
+            <div class="certificate-box" data-pdf="Introduction_to_Cybersecurity_certificate_jcyleana-mcm-edu-ph_bb0370cd-efbb-4df8-acce-10f331fd36de.pdf">
+                <img src="cert.png" alt="Introduction to Cybersecurity">
+                <p>Introduction to Cybersecurity Certificate</p>
+            </div>
+            <div class="certificate-box" data-pdf="Yleña_JohnCyrus_AWSBadgeTraining.pdf">
+                <img src="Yleña_JohnCyrus_AWSBadgeTraining.png" alt="AWS Academy Cloud Architecting">
+                <p>AWS Academy Cloud Architecting - Trained</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Full-Screen Modal -->
+<div id="pdfModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+    
+    <!-- Projects Section -->
+<section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <a href="index.html">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 1</h3>
+                    <p>Environment Setup Activity.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="ExplorePHTours/YleanaExplorePHTours.html">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 2</h3>
+                    <p>ExplorePHTours Activity</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="CourseSchedule/YleanaCourseSchedule.html">
+                    <i class="project-icon fas fa-laptop-code"></i>
+                    <h3>Project 3</h3>
+                    <p>Course Schedule Activity.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="Activity 4/index.html">
+                    <i class="project-icon fas fa-paint-brush"></i>
+                    <h3>Project 4</h3>
+                    <p>Activity 4 Week 5.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="Activity 5/index.html">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 5</h3>
+                    <p>Activity 5 Week 5.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/cyxkira29/M2_Yleana_Javascripting">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 6</h3>
+                    <p>Activity Week 11 Javascripting.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/cyxkira29/M2_Yleana_LearnYouNode">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 7</h3>
+                    <p>Activity Week 11 Learn You Node.</p>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="WEBPROG/public/html/new-customer.html">
+                    <i class="project-icon fas fa-database"></i>
+                    <h3>Project 8</h3>
+                    <p>FINAL PROJECT - M2 Summative Assessment</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:your.email@example.com">johncyrusyleana@gmail.com</a></p>
+        <p>Phone: <a href="tel:+1234567890">+63 9567566052</a></p>
+        <p>Follow me on:</p>
+        <div class="social-links">
+            <a href="https://github.com/cyxkira29" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/feed/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.facebook.com/cy88rising" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/jcyxyln/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="portfolio.js"></script>
+
+</body>
+</html>
